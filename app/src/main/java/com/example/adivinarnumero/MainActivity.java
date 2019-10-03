@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText numero = findViewById(R.id.txtNumero);
 
         final TextView txtView = findViewById(R.id.textView);
+        final TextView txtView2 = findViewById(R.id.contador);
 
         // Inicializo el boton con una funcion al pulsarlo:
         final Button button = findViewById(R.id.button);
@@ -34,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 contador = contador + 1;
 
+                txtView2.setText("Intentos : " + contador);
+
                 // Recojo el contenido del EditText y lo paso a Int:
                 String StrNumeroRecogido = numero.getText().toString();
                 int numeroRecogido = Integer.valueOf(StrNumeroRecogido);
 
                 // Comparo si el numero introducido por el usuario es el mismo que el numero que se ha generado aleatorio:
-                if (numeroRecogido == randomNum) {
+                if (numeroRecogido == 41) {
                     // Se muestra un mensaje conforme has hacertado el numero:
                     Context context = getApplicationContext();
                     CharSequence text = "HAS ACERTADO";
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Cada numero que introduzca el usuario se guarda en un texto (primero se recoge el contenido de este y se le añade una linea mas):
                 txtView.setText(txtView.getText() + "Has utilizado el numero: " + StrNumeroRecogido + "\n");
+
+                numero.setText("");
             }
         });
 
