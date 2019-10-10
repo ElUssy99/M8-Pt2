@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Parametro para generar numero aleatorio
-        final int randomNum = new Random().nextInt(1)+100;
+        final int randomNum = new Random().nextInt(100)+1;
 
         final EditText numero = findViewById(R.id.txtNumero);
 
